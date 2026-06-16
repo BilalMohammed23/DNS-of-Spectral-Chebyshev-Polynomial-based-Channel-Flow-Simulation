@@ -424,4 +424,10 @@ Streamwise velocity profiles $u/u_c$ at $x = L/2$ captured at $t = 0, 10, 30, 50
 
 ---
 
+## Reference
+
+> Moin, P., & Kim, J. (1980). *On the numerical solution of time-dependent viscous incompressible fluid flows involving solid boundaries.* Journal of computational physics, 35(3), 381-392.
+
+---
+
 *Solver: 2D Incompressible Navier–Stokes — Fourier (x) × Chebyshev (y) spectral DNS with Adams–Bashforth / Crank–Nicolson time advancement and global coupled velocity–pressure matrix (no pressure BC required).*
