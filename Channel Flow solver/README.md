@@ -424,12 +424,4 @@ Streamwise velocity profiles $u/u_c$ at $x = L/2$ captured at $t = 0, 10, 30, 50
 
 ---
 
-### Reference
-
-> Kim, J., Moin, P., & Moser, R. (1987). *Turbulence statistics in fully developed channel flow at low Reynolds number.* Journal of Fluid Mechanics, 177, 133–166.
->
-> Canuto, C., Hussaini, M. Y., Quarteroni, A., & Zang, T. A. (1988). *Spectral Methods in Fluid Dynamics.* Springer.
-
----
-
 *Solver: 2D Incompressible Navier–Stokes — Fourier (x) × Chebyshev (y) spectral DNS with Adams–Bashforth / Crank–Nicolson time advancement and global coupled velocity–pressure matrix (no pressure BC required).*
