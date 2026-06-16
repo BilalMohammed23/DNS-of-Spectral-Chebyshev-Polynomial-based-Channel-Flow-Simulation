@@ -1,7 +1,48 @@
-# Advection --> 3D Pressure Poisson Equation --> Channel Flow Solver
+# Fully Spectral Chebyshev Polynomial-Based Channel Flow DNS
 
-This project develops a fully spectral incompressible channel-flow solver by progressing from scalar advection, to a three-dimensional pressure Poisson formulation, and finally to a coupled pressure–momentum channel-flow DNS framework. The solver uses Fourier discretization in the periodic streamwise direction and Chebyshev polynomial expansion in the wall-normal direction to resolve velocity and pressure fields with high spectral accuracy.
+This repository documents the development of a **fully spectral incompressible Navier–Stokes solver** for plane channel flow, built from first principles using Fourier discretisation in the periodic streamwise direction and Chebyshev polynomial expansion in the wall-normal direction.
 
-The final channel-flow formulation advances the incompressible Navier–Stokes equations using explicit treatment of nonlinear terms and implicit treatment of viscous terms, while enforcing continuity and wall boundary conditions through a coupled pressure–momentum approach.
+The project is structured as a **progressive solver development pathway** — starting from a simple scalar advection problem to build intuition for the Chebyshev spectral framework, then extending to a 3D pressure Poisson solver, and finally assembling a fully coupled DNS solver for channel flow. Each stage is self-contained and documented with the underlying numerical theory, derivations, and MATLAB implementation.
 
-All 3 different solvers have been documented with code implemented in MATLAB.
+---
+
+## Solver Progression
+
+| Stage | Folder | What it solves |
+|---|---|---|
+| 1 | `Advection Solver` | 1D linear advection — Chebyshev pseudospectral + RK4 |
+| 2 | `Pressure Poisson Solver` | 3D Poisson equation — Fourier (x,z) × Chebyshev (y) |
+| 3 | `Channel Flow Solver` | 2D incompressible N–S — coupled velocity–pressure DNS |
+
+---
+
+## How to Navigate
+
+Each folder contains its own `README.md` with the full numerical theory, derivations, algorithm, file structure, and results. It is recommended to go through the folders **in order** — the spectral differentiation framework, Chebyshev coefficient recursions, and even–odd tridiagonal solve developed in the earlier stages carry forward directly into the channel flow solver.
+
+If you are already familiar with Chebyshev spectral methods and only want the channel flow formulation, go directly to `Channel Flow Solver`.
+
+---
+
+## Implementation
+
+All solvers are implemented in **MATLAB**. No external toolboxes are required beyond the base MATLAB installation.
+
+---
+
+## Key Numerical Features
+
+- Chebyshev–Gauss–Lobatto collocation in the wall-normal direction
+- Fourier pseudospectral discretisation in periodic directions
+- 3/2-rule de-aliasing for nonlinear terms
+- Adams–Bashforth (explicit) for nonlinear terms, Crank–Nicolson (implicit) for viscous terms
+- Global coupled velocity–pressure matrix solve — no pressure boundary condition required
+- Even–odd decoupled tridiagonal systems for spectral efficiency
+
+---
+
+## Reference
+
+> Canuto, C., Hussaini, M. Y., Quarteroni, A., & Zang, T. A. (1988). *Spectral Methods in Fluid Dynamics.* Springer.
+>
+> Kim, J., Moin, P., & Moser, R. (1987). *Turbulence statistics in fully developed channel flow at low Reynolds number.* Journal of Fluid Mechanics, 177, 133–166.
