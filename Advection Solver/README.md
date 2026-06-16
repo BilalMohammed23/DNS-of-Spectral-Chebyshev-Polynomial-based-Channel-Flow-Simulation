@@ -267,10 +267,4 @@ The Gaussian pulse initialised at $x_0 = -0.3$ advects rightward with speed $c =
 
 ---
 
-### Reference
-
-> Canuto, C., Hussaini, M. Y., Quarteroni, A., & Zang, T. A. (1988). *Spectral Methods in Fluid Dynamics.* Springer.
-
----
-
 *Solver: 1D Chebyshev Pseudospectral Advection with RK4 — Tau BC enforcement (Rogallo-style coefficient-space time advancement).*
