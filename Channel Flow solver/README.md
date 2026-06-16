@@ -408,17 +408,13 @@ All results are for $Re = 100$, $N_x = 32$.
 
 ### Velocity Contour
 
-![Velocity magnitude contour](Results/velocity_contour.png)
+![Velocity magnitude contour](Results/velocity_contour_w.png)
 
 ### Time-Evolved Velocity Profiles
 
 Streamwise velocity profiles $u/u_c$ at $x = L/2$ captured at $t = 0, 10, 30, 50$, converging to the parabolic Poiseuille profile $u = 1 - y^2$.
 
-![Time-advanced velocity profiles](Results/time_adv_velocity_profiles.png)
-
-### Convergence
-
-![Convergence](Results/convergence_picture.png)
+![Time-advanced velocity profiles](Results/time_adv_velocity_profiles_w.png)
 
 > The solver enforces incompressibility ($\nabla \cdot \mathbf{u} = 0$) to machine precision at every time step — verified by the printed `max div` output. The velocity profiles converge to the exact parabolic solution $u = 1 - y^2$ as $t \to \infty$, consistent with fully developed laminar channel flow at the given $Re$.
 
