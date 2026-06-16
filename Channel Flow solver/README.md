@@ -160,7 +160,7 @@ The $3N \times 3N$ matrix $\mathbf{M}_1$ has the block structure:
 │                 │   (tridiag)  │   (∂/∂y)     │
 ├─────────────────┼──────────────┼──────────────┤
 │  continuity–u   │ continuity–v │      0       │   ← rows 2N+1..3N (continuity)
-│   (ik terms)    │   (∂/∂y)    │              │
+│   (ik terms)    │   (∂/∂y)     │              │
 └─────────────────┴──────────────┴──────────────┘
 ```
 
