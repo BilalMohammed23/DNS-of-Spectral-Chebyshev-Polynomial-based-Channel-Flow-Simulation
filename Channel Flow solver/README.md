@@ -420,7 +420,7 @@ Streamwise velocity profiles $u/u_c$ at $x = L/2$ captured at $t = 0, 30, 50, 80
   <img src="Results/time_adv_velocity_profiles_w.png" width="500"/>
 </p>
 
-> The solver enforces incompressibility ($\nabla \cdot \mathbf{u} = 0$) to machine precision at every time step — verified by the printed `max div` output. The velocity profiles converge to the exact parabolic solution $u = 1 - y^2$ as $t \to \infty$, consistent with fully developed laminar channel flow at the given $Re$.If you look, possibly if we crank up the *time(t)* to *100* or more, the numerical results would match the analytical solution exactly, which demonstrates the robustness of spectral accuracy.
+> The solver enforces incompressibility ($\nabla \cdot \mathbf{u} = 0$) to machine precision at every time step — verified by the printed `max div` output. The velocity profiles converge to the exact parabolic solution $u = 1 - y^2$ as $t \to \infty$, consistent with fully developed laminar channel flow at the given $Re$.If you look, possibly if we crank up the time(*t*) to *100* or more, the numerical results would match the analytical solution exactly, which demonstrates the robustness of spectral accuracy.
 
 ---
 
