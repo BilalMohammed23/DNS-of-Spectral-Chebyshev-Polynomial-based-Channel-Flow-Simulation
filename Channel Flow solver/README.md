@@ -113,11 +113,17 @@ $$\mathcal{B}_2 = -\frac{1}{2}\frac{\partial P^n}{\partial y} + \frac{\gamma}{2}
 
 Since $x$ is periodic, apply FFT in $x$ to the discretised momentum equations. Invoking orthogonality:
 
-$$\frac{2}{\gamma \Delta t}\hat{u}^{n+1} - \left(\frac{\partial^2 \hat{u}^{n+1}}{\partial y^2} - k^2 \hat{u}^{n+1}\right) + \frac{ik}{\gamma}\hat{P}^{n+1} = \frac{2}{\gamma}\hat{\mathcal{B}}_1 \tag{1}$$
+**Equation (1) — x-momentum in Fourier–Chebyshev space:**
 
-$$\frac{2}{\gamma \Delta t}\hat{v}^{n+1} - \left(\frac{\partial^2 \hat{v}^{n+1}}{\partial y^2} - k^2 \hat{v}^{n+1}\right) + \frac{1}{\gamma}\frac{\partial \hat{P}^{n+1}}{\partial y} = \frac{2}{\gamma}\hat{\mathcal{B}}_2 \tag{2}$$
+$$\frac{2}{\gamma \Delta t}\hat{u}^{n+1} - \hat{u}^{n+1}_{yy} + k^2 \hat{u}^{n+1} + \frac{ik}{\gamma}\hat{P}^{n+1} = \frac{2}{\gamma}\hat{\mathcal{B}}_1$$
 
-$$ik\hat{u}^{n+1} + \frac{\partial \hat{v}^{n+1}}{\partial y} = 0 \tag{continuity}$$
+**Equation (2) — y-momentum in Fourier–Chebyshev space:**
+
+$$\frac{2}{\gamma \Delta t}\hat{v}^{n+1} - \hat{v}^{n+1}_{yy} + k^2 \hat{v}^{n+1} + \frac{1}{\gamma}\hat{P}^{n+1}_y = \frac{2}{\gamma}\hat{\mathcal{B}}_2$$
+
+**Continuity:**
+
+$$ik\hat{u}^{n+1} + \hat{v}^{n+1}_y = 0$$
 
 where $\beta = 2/(\gamma \Delta t)$ and $\alpha = k^2 + \beta$.
 
