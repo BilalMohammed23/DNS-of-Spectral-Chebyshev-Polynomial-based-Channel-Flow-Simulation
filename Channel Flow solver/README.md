@@ -414,7 +414,7 @@ All results are for $Re = 100$, $N_x = 32$.
 
 ### Time-Evolved Velocity Profiles
 
-Streamwise velocity profiles $u/u_c$ at $x = L/2$ captured at $t = 0, 10, 30, 50$, converging to the parabolic Poiseuille profile $u = 1 - y^2$.
+Streamwise velocity profiles $u/u_c$ at $x = L/2$ captured at $t = 0, 30, 50, 80$, converging to the parabolic Poiseuille profile $u = 1 - y^2$.
 
 <p align="center">
   <img src="Results/time_adv_velocity_profiles_w.png" width="500"/>
