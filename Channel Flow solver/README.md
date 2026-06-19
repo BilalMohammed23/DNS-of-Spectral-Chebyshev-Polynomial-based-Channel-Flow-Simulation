@@ -191,15 +191,20 @@ The continuity equation provides the additional equations that close the system 
 
 ## 9. Special Treatment for k = 0 Mode
 
-The $k = 0$ (zero wavenumber) Fourier mode requires separate handling for two reasons:
+The $k = 0$ (zero wavenumber) Fourier mode requires separate handling for two reasons.
 
-**i) No $x$-pressure gradient:** The $ik\hat{P}$ coupling term in the $u$-momentum equation vanishes at $k = 0$, so the $u$–$P$ block is removed (commented out in `global_matrix_general_k0.m`). The streamwise mean flow is instead driven by the prescribed body force $K$.
+**i) No x-pressure gradient**
 
-**ii) Gauge condition and pressure BC:** With no $ik$ coupling, the $k = 0$ pressure is determined only up to a constant (gauge freedom). Two constraints replace the missing equations:
-- **Gauge condition:** $d_0 = 0$ (fixes the pressure mean)
-- **Pressure BC:** $\left.\dfrac{\partial \hat{P}}{\partial y}\right|_{y=1} = 0$ at the top wall, imposed via the condition `sum_{n=1}^{N-1} n^2 d_n = 0`
+The $ik\hat{P}$ coupling term in the $u$-momentum equation vanishes at $k = 0$, so the $u$-$P$ coupling block is removed entirely (commented out in `global_matrix_general_k0.m`). The streamwise mean flow is instead driven by the prescribed body force $K$.
 
-**Implemented in:** `global_matrix_general_k0.m` — the $u$–$P$ and $u$-continuity blocks are zeroed out, replaced by the gauge and pressure BC rows.
+**ii) Gauge condition and pressure BC**
+
+With no $ik$ coupling, the $k = 0$ pressure is determined only up to a constant (gauge freedom). Two constraints replace the two missing equations:
+
+- **Gauge condition:** $d_0 = 0$, which fixes the pressure mean.
+- **Pressure BC:** the wall-normal pressure gradient vanishes at the top wall ($y = 1$), i.e. $\partial \hat{P}/\partial y = 0$. This is imposed discretely through the condition $\sum_{n=1}^{N-1} n^2 d_n = 0$.
+
+**Implemented in:** `global_matrix_general_k0.m` — the $u$-$P$ coupling block and the $u$-continuity row are zeroed out, and replaced by the gauge condition row and the pressure BC row described above.
 
 ---
 
