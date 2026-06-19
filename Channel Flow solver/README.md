@@ -197,7 +197,7 @@ The $k = 0$ (zero wavenumber) Fourier mode requires separate handling for two re
 
 **ii) Gauge condition and pressure BC:** With no $ik$ coupling, the $k = 0$ pressure is determined only up to a constant (gauge freedom). Two constraints replace the missing equations:
 - **Gauge condition:** $d_0 = 0$ (fixes the pressure mean)
-- **Pressure BC:** $\left.\dfrac{\partial \hat{P}}{\partial y}\right|_{y=1} = 0$ at the top wall, imposed via the condition $\sum_{n=1}^{N-1} n^2 d_n = 0$
+- **Pressure BC:** $\left.\dfrac{\partial \hat{P}}{\partial y}\right|_{y=1} = 0$ at the top wall, imposed via the condition `sum_{n=1}^{N-1} n^2 d_n = 0`
 
 **Implemented in:** `global_matrix_general_k0.m` — the $u$–$P$ and $u$-continuity blocks are zeroed out, replaced by the gauge and pressure BC rows.
 
